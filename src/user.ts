@@ -9,6 +9,7 @@ export function renderUserBlock(favoriteItemsAmount: number, userName: string, l
   const favoritesCaption = '';
   if (favoriteItemsAmount < 1) {
     alert('ничего нет');
+    //пока что работа встала
   }
   const hasFavoriteItems = favoriteItemsAmount ? true : false
 
