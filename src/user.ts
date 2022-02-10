@@ -12,7 +12,6 @@ export function renderUserBlock(favoriteItemsAmount: number, userName: string, l
       { text: 'Ничего нет', type: 'success' },
       { name: 'Понял', handler: () => { console.log('Уведомление закрыто') } }
     )
-    //пока что работа встала из-за проблемы компиляции файлов
   }
   const hasFavoriteItems = favoriteItemsAmount ? true : false
 
