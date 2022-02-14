@@ -1,15 +1,17 @@
 import { renderBlock } from './lib.js'
-
+import { renderToast } from './lib.js';
 
 export function renderUserBlock(favoriteItemsAmount: number, userName: string, linkAvatar: string) {
 
   // const favoritesCaption = favoriteItemsAmount ? favoriteItemsAmount : 'ничего нет'
   const hasName = userName;
   const hasLinkAvatar = linkAvatar;
-  const favoritesCaption = '';
+  const favoritesCaption = favoriteItemsAmount;
   if (favoriteItemsAmount < 1) {
-    alert('ничего нет');
-    //пока что работа встала
+    renderToast(
+      { text: 'Ничего нет', type: 'success' },
+      { name: 'Понял', handler: () => { console.log('Уведомление закрыто') } }
+    )
   }
   const hasFavoriteItems = favoriteItemsAmount ? true : false
 
