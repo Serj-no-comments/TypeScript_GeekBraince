@@ -6,11 +6,10 @@ interface SearchFormData {
   departureDate: string,
   maxDayPrice: number
 }
-const d: Date = new Date();
-export function renderSearchFormBlock(entity: SearchFormData) {
-  const today = new Date();
-  const minDate = today.toISOString().split('T')[0];;
-  const maxDate = new Date(today.getFullYear(), today.getMonth() + 2, 0).toISOString().split('T')[0];
+
+export function renderSearchFormBlock(firstData: string, lastData: string): void {
+  const minDate = firstData;
+  const maxDate = lastData;
   const date = new Date();
   const arrivalDate = new Date(date.getFullYear(), date.getUTCMonth(), date.getDate() + 2).toISOString().split('T')[0];//Почему то выводится дата на 1 день меньше, поэтому добавляю 2 дня
   const departureDay = new Date(date.getFullYear(), date.getUTCMonth(), date.getDate() + 4).toISOString().split('T')[0];//Добавляю 4 дня по причине,указанной в варианте выше
