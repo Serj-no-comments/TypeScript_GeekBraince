@@ -14,6 +14,15 @@ window.addEventListener('DOMContentLoaded', () => {
   renderSearchFormBlock(firstData,lastDate)
   renderSearchStubBlock()
   getTodosByCount(3)
+    .then((todo)=>{console.log(
+      todo.userId,
+      todo.id,
+      todo.title,
+      todo.completed
+    )})
+    .catch((error)=>{
+      console.error(error)
+    })
   // renderToast(
   //   { text: 'Ничего нет', type: 'success' },
   //   { name: 'Понял', handler: () => { console.log('Уведомление закрыто') } }
