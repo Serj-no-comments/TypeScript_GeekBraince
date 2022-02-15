@@ -2,6 +2,7 @@ import { renderSearchFormBlock } from './search-form.js'
 import { renderSearchStubBlock } from './search-results.js'
 import { renderUserBlock } from './user.js'
 import {User, getFavoritesAmount, getUserData} from './production.js'
+import {getTodosByCount} from './API-todos'
 
 window.addEventListener('DOMContentLoaded', () => {
   const data: User = getUserData();
@@ -12,6 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const lastDate: string=new Date(today.getFullYear(), today.getMonth() + 2, 0).toISOString().split('T')[0];
   renderSearchFormBlock(firstData,lastDate)
   renderSearchStubBlock()
+  getTodosByCount(3)
   // renderToast(
   //   { text: 'Ничего нет', type: 'success' },
   //   { name: 'Понял', handler: () => { console.log('Уведомление закрыто') } }
