@@ -2,11 +2,13 @@
   "name": "typescript_geekbraince",
   "version": "1.0.0",
   "description": " ",
+  "type": "module",
   "main": "dist/index.js",
   "scripts": {
     "build": "rd -r public\\scripts 2>null & tsc",
     "build:dev": "rd -r public\\scripts 2>null & tsc -p tsconfig-dev.json",
     "start": "node public\\dist\\index.js",
+    "start:cli": "node public/scripts",
     "lint": "eslint src --ext .js --ext .ts",
     "lint-fix": "eslint src --ext .js --ext .ts --fix"
   },
